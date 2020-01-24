@@ -12,7 +12,7 @@ struct ContentView: View {
     @State var pourcentage: Double = 0.5
     var body: some View {
         VStack {
-            Text("Hello, World! \(Int(pourcentage*100))%")
+            Text("Hello, World! \(Int(pourcentage*100))% ")
                 .padding(20)
             Button(action: {
                 self.pourcentage += 0.01
