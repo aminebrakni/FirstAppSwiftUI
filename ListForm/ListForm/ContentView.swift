@@ -32,8 +32,10 @@ struct ContentView: View {
 //            }
 //        }.navigationBarTitle("Simplon")
         NavigationView {
-            List(albums) {
-                album in AlbumView(album: album)
+            List(albums) { album in
+                NavigationLink(destination: AlbumDetailView(album: album)) {
+                        AlbumView(album: album)
+                }
             }.navigationBarTitle("Playlist")
         }
     }
