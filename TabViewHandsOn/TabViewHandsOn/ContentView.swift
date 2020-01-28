@@ -18,20 +18,19 @@ struct ContentView: View {
                         Image(systemName: "1.square.fill")
                         Text("Bleu")
                     }
+                ColorTextView(color: .pink, text: "Rose")
+                //Text("Another Tab")
+                    .tabItem {
+                        Image(systemName: "2.square.fill")
+                        Text("Rose")
+                    }
+                ColorTextView(color: .green, text: "Vert")
+                //Text("The Last Tab")
+                    .tabItem {
+                        Image(systemName: "3.square.fill")
+                        Text("Vert")
+                    }
             }
-            
-            ColorTextView(color: .pink, text: "Rose")
-            //Text("Another Tab")
-                .tabItem {
-                    Image(systemName: "2.square.fill")
-                    Text("Rose")
-                }
-            ColorTextView(color: .green, text: "Vert")
-            //Text("The Last Tab")
-                .tabItem {
-                    Image(systemName: "3.square.fill")
-                    Text("Vert")
-                }
         }
         .edgesIgnoringSafeArea(.top)
         .font(.headline)
