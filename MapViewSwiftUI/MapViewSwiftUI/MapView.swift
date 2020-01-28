@@ -7,28 +7,30 @@
 //
 
 import SwiftUI
-import Mapkit
+import MapKit
 
 struct MapView: UIViewRepresentable {
-    
-    var latitude Double
+    var latitude: Double
     var longitude: Double
-    var span: MKCoordinateSpan
+    var span: Double
     
-    func makeUIView(context: Context) -> MKMapView {
-        MKMapView(frame: .zero)
+    typealias UIViewType = MKMapView
+    
+    func makeUIView(context: UIViewRepresentableContext<MapView>) -> MKMapView {
+        return MKMapView(frame: .zero)
     }
-    func updateUIView(_ view: MKMapView, context: Context) {
-        let coordinate = CLLocationCoordinate2D(
-            latitude: latitude, longitude: longitude)
-        let span = MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0)
-        let region = MKCoordinateRegion(center: coordinate, span: span)
-        view.setRegion(region, animated: true)
+    
+    func updateUIView(_ uiView: MKMapView, context: UIViewRepresentableContext<MapView>) {
+        
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let coordinateSpan = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
+        let region = MKCoordinateRegion(center: coordinate, span: coordinateSpan)
+        uiView.setRegion(region, animated: true)
     }
 }
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
+        MapView(latitude: 45.333333, longitude: 5.446543, span: 2.0)
     }
 }
