@@ -13,7 +13,7 @@ struct MainView: View {
     var body: some View {
         
         NavigationView {
-        
+            
         ZStack {
             
             Image("yucca")
@@ -46,19 +46,18 @@ struct MainView: View {
             .foregroundColor(.white)
             .offset(x: -45, y: -130)
             
-  
-            Button(action: {
-                
-            }) {
-                Text("FIND OUT MORE")
-                    .padding(20)
-                    .foregroundColor(.white)
-                    .background(Color.red)
-                    .font(.system(size: 20.0, weight: .heavy, design: .default))
-                    .cornerRadius(8.0)
-                
-                
-            }.offset(y: 270)
+            NavigationLink(destination: DetailView()){
+                 
+                    Text("FIND OUT MORE")
+                        .padding(20)
+                        .foregroundColor(.white)
+                        .background(Color.red)
+                        .font(.system(size: 20.0, weight: .heavy, design: .default))
+                        .cornerRadius(8.0)
+                    
+                    
+                }.offset(y: 270)
+            
             
             
             
