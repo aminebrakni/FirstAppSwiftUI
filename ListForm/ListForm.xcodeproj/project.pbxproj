@@ -42,7 +42,6 @@
 		3FD164E023DB477800A83F61 = {
 			isa = PBXGroup;
 			children = (
-				3FD1654623DF172C00A83F61 /* AlbumDetailView.swift */,
 				3FD164EB23DB477800A83F61 /* ListForm */,
 				3FD164EA23DB477800A83F61 /* Products */,
 			);
@@ -61,6 +60,7 @@
 			children = (
 				3FD164EC23DB477800A83F61 /* AppDelegate.swift */,
 				3FD164EE23DB477800A83F61 /* SceneDelegate.swift */,
+				3FD1654623DF172C00A83F61 /* AlbumDetailView.swift */,
 				3FD164F023DB477800A83F61 /* ContentView.swift */,
 				3FD164F223DB477900A83F61 /* Assets.xcassets */,
 				3FD164F723DB477900A83F61 /* LaunchScreen.storyboard */,

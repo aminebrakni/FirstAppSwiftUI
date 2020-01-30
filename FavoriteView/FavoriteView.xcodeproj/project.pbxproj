@@ -13,6 +13,7 @@
 		3F8F5F0923E1892E00DE996B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F8F5F0823E1892E00DE996B /* Assets.xcassets */; };
 		3F8F5F0C23E1892E00DE996B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F8F5F0B23E1892E00DE996B /* Preview Assets.xcassets */; };
 		3F8F5F0F23E1892E00DE996B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F8F5F0D23E1892E00DE996B /* LaunchScreen.storyboard */; };
+		3F8F5F5B23E3127800DE996B /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F5F5A23E3127800DE996B /* CategoryRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		3F8F5F0B23E1892E00DE996B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F8F5F0E23E1892E00DE996B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F8F5F1023E1892E00DE996B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F8F5F5A23E3127800DE996B /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				3F8F5F0223E1892C00DE996B /* AppDelegate.swift */,
 				3F8F5F0423E1892C00DE996B /* SceneDelegate.swift */,
 				3F8F5F0623E1892C00DE996B /* ContentView.swift */,
+				3F8F5F5A23E3127800DE996B /* CategoryRow.swift */,
 				3F8F5F0823E1892E00DE996B /* Assets.xcassets */,
 				3F8F5F0D23E1892E00DE996B /* LaunchScreen.storyboard */,
 				3F8F5F1023E1892E00DE996B /* Info.plist */,
@@ -148,6 +151,7 @@
 			files = (
 				3F8F5F0323E1892C00DE996B /* AppDelegate.swift in Sources */,
 				3F8F5F0523E1892C00DE996B /* SceneDelegate.swift in Sources */,
+				3F8F5F5B23E3127800DE996B /* CategoryRow.swift in Sources */,
 				3F8F5F0723E1892C00DE996B /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
