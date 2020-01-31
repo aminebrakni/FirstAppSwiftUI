@@ -26,8 +26,9 @@ struct ContentView: View {
         NavigationView{
             VStack {
                 PickerView(favorite: $favorite)
+                
                 if favorite == .interets {
-                    CategoryRow(Choix: "Intérêts")
+                    CategoryRow(Choix: "Interets")
                 }else{
                     CategoryRow(Choix: "Lieux")
                 }
@@ -51,6 +52,7 @@ struct PickerView: View {
         .pickerStyle(SegmentedPickerStyle())
         .padding(.horizontal, 60.0)
         .padding(.top, 30.0)
+        .padding(.bottom, 10.0)
         // END PICKER
     }
 }

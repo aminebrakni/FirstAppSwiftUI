@@ -11,7 +11,8 @@ import SwiftUI
 struct CategoryRow: View {
     
     var Choix: String
-    let boxesInterets: [Box] = [
+    
+    var ChoixInteret = [
         Box(title: "Good", imageURL: "hiddenlake"),
         Box(title: "Tech", imageURL: "icybay"),
         Box(title: "Code", imageURL: "lakemcdonald"),
@@ -20,7 +21,7 @@ struct CategoryRow: View {
         Box(title: "Code", imageURL: "stmarylake"),
     ]
     
-    let boxesLieux: [Box] = [
+    var ChoixLieux = [
         Box(title: "food", imageURL: "lakemcdonald"),
         Box(title: "stade", imageURL: "stmarylake"),
         Box(title: "etc", imageURL: "rainbowlake"),
@@ -28,15 +29,29 @@ struct CategoryRow: View {
         Box(title: "test", imageURL: "silversalmoncreek"),
         Box(title: "lieu", imageURL: "hiddenlake"),
     ]
-    
     var body: some View {
+        
         VStack(alignment: .leading) {
-        Text("\(Choix)").fontWeight(.medium).padding(10).font(.system(size: 25))
+       
+            if Choix == "Interets"{
+            Text("Sports").fontWeight(.medium).padding(10).font(.system(size: 25))
+            }else{
+            Text("Paris").fontWeight(.medium).padding(10).font(.system(size: 25))
+            }
+            
             // BEGIN SLIDER HORIZONTAL
             ScrollView(.horizontal, content: {
                 HStack(spacing: 10) {
-                    ForEach(boxes+"\(Choix)", id: \.id) {
-                        box in BoxView(box: box)
+                    if Choix == "Interets" {
+
+                        ForEach(ChoixInteret, id: \.id) {
+                            box in BoxView(box: box)
+                        }
+                    }else{
+
+                        ForEach(ChoixLieux, id: \.id) {
+                            box in BoxView(box: box)
+                        }
                     }
                 }.padding(10)
                 
@@ -64,6 +79,6 @@ struct BoxView: View {
 
 struct CategoryRow_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryRow(Choix: "Intérêts")
+        CategoryRow(Choix: "Interets")
     }
 }
