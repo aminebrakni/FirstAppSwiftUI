@@ -13,11 +13,6 @@ enum CategoryType: String {
     case lieux = "Lieux"
 }
 
-struct Box: Identifiable{
-    var id = UUID()
-    var title, imageURL: String
-    
-}
 struct ContentView: View {
     @State var favorite: CategoryType = .interets
     
@@ -26,11 +21,10 @@ struct ContentView: View {
         NavigationView{
             VStack {
                 PickerView(favorite: $favorite)
-                
                 if favorite == .interets {
-                    CategoryRow(Choix: "Interets")
+                    CategoryRow(choixSegmented: "Interets")
                 }else{
-                    CategoryRow(Choix: "Lieux")
+                    CategoryRow(choixSegmented: "Lieux")
                 }
                 Spacer()
             }
