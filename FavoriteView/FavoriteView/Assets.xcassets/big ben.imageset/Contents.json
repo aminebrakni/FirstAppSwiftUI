@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "big ben.jpeg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "big ben.jpeg",
       "scale" : "2x"
     },
     {

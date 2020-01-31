@@ -77,16 +77,25 @@ struct CategoryRow: View {
 
 struct BoxView: View {
     
+    @State private var isPresented = false
     let box: BoxViewModel
     
     var body: some View {
         
-        VStack(alignment: .leading){
-            Image(box.imageName).resizable()
-                .frame(width: 155, height: 155)
-                .cornerRadius(5)
-            Text(box.title)
-        }
+        Button(action: {
+            self.isPresented.toggle()
+        }, label: {
+            VStack(alignment: .leading){
+                Image(box.imageName).resizable()
+                    .frame(width: 155, height: 155)
+                    .cornerRadius(5)
+                Text(box.title)
+            }
+        }).sheet(isPresented: $isPresented) { () -> Text in
+            Text("\(self.box.title)")
+        }.buttonStyle(PlainButtonStyle())
+        
+        
     }
 }
 
