@@ -98,7 +98,7 @@
     },
 {
         "images": ["hyde park", "hyde park2", "hyde park3"],
-        "name": " The Hyde Park",
+        "name": "The Hyde Park",
         "country": "Royaume Uni",
         "city": "Londres",
         "adresse": "Hyde Park Serpentine Road London W2 2UH England",
@@ -114,7 +114,7 @@
     },
 {
         "images": [ "st paul", "st paul2", "st paul3", "st paul4" ],
-        "name": "Cathédrale Saint Paul de Londres",
+        "name": "Cathédrale Saint Paul",
         "country": "Royaume Uni",
         "city": "Londres",
         "adresse": "The Chapter House St Paul's Churchyard London EC4M 8AD England",
@@ -226,7 +226,7 @@
     },
 {
         "images": ["jack l'eventreur" ],
-        "name": "Sur les traces de Jack l'Eventreur",
+        "name": "Jack l'Eventreur",
         "country": "Royaume Uni",
         "city": "Londres",
         "adresse": "Quartier Whitechapel",
@@ -242,7 +242,7 @@
     },
 {
         "images": [ "tamise", "tamise2" ],
-        "name": "Croisière sur la tamise",
+        "name": "Croisière tamise",
         "country": "Royaume Uni",
         "city": "Londres",
         "adresse": "Tamise",
@@ -274,7 +274,7 @@
     },
 {
         "images": [ "beatles" ],
-        "name": "Circuit spécial 50e anniversaire des Beatles",
+        "name": "Circuit spécial Beatles",
         "country": "Royaume Uni",
         "city": "Londres",
         "adresse": "",
@@ -290,7 +290,7 @@
     },
 {
         "images": [ "banquet" ],
-        "name": "Banquet médiéval à la Ivory House",
+        "name": "Banquet médiéval House",
         "country": "Royaume Uni",
         "city": "Londres",
         "adresse": "Ivory House East Smithfield London E1W 1AT England",

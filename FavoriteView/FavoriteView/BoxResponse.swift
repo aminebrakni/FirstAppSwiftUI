@@ -15,7 +15,8 @@ struct Box: Codable {
     let city: City
     let adresse: String
     let tarif: Double
-    let tel, category: String
+    let tel: String
+    let category: Category
     let isFavorite, isFeatured: Bool
     let coordinates: [Coordinate]
 
@@ -23,12 +24,25 @@ struct Box: Codable {
         case images, name, country, city, adresse, tarif, tel
         case category, isFavorite, isFeatured, coordinates
     }
+    
+    
 }
 
 enum City: String, Codable {
     case londres = "Londres"
 }
-
+enum Category: String, Codable, CaseIterable{
+    case lieuHistorique = "Lieu historique"
+    case musee          = "Musée"
+    case parc           = "Parc"
+    case placePublic    = "Place public"
+    case cinema         = "Cinéma"
+    case histoire       = "Histoire"
+    case croisiere      = "Croisière"
+    case sport          = "Sport"
+    case musique        = "Music"
+    case banquet        = "Banquet"
+}
 // MARK: - Coordinate
 struct Coordinate: Codable {
     let latitude, longitude: Double

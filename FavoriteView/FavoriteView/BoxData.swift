@@ -32,5 +32,9 @@ struct BoxData {
             fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
         }
     }
+    
+    static func getBoxesByCategory(_ category: Category) -> [Box] {
+        self.boxes.filter { $0.category == category }
+    }
 }
 

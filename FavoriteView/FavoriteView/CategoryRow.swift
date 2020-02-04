@@ -33,6 +33,13 @@ struct CategoryRow: View {
         }
     }
     
+    /*var filterCategory: [BoxViewModel] {
+        let filteredBoxes = BoxData.boxes.filter { box in
+            return box.category == .banquet
+        }
+    }*/
+    
+    
     var choixSegmentedLieux = [
         BoxViewModel(title: "food", imageName: "lakemcdonald"),
         BoxViewModel(title: "stade", imageName: "stmarylake"),
