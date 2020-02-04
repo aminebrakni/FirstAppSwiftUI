@@ -8,7 +8,9 @@
 
 import Foundation
 // MARK: - Box
-struct Box: Codable {
+struct Box: Codable, Identifiable {
+    var id = UUID()
+    
     let images: [String]
     let name: String
     let country: Country
@@ -24,24 +26,23 @@ struct Box: Codable {
         case images, name, country, city, adresse, tarif, tel
         case category, isFavorite, isFeatured, coordinates
     }
-    
-    
 }
 
 enum City: String, Codable {
     case londres = "Londres"
 }
-enum Category: String, Codable, CaseIterable{
+enum Category: String, Codable, Hashable, CaseIterable{
     case lieuHistorique = "Lieu historique"
     case musee          = "Musée"
     case parc           = "Parc"
-    case placePublic    = "Place public"
+    case placePublic    = "Place publique"
     case cinema         = "Cinéma"
     case histoire       = "Histoire"
     case croisiere      = "Croisière"
     case sport          = "Sport"
     case musique        = "Music"
     case banquet        = "Banquet"
+    case home           = "Home"
 }
 // MARK: - Coordinate
 struct Coordinate: Codable {

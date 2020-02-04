@@ -23,7 +23,6 @@ struct ContentView: View {
                 PickerView(favorite: $favorite)
                 if favorite == .interets {
                     CategoryRow(choixSegmented: "Interets")
-
                 }else{
                     CategoryRow(choixSegmented: "Lieux")
                 }

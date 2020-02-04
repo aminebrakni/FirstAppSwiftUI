@@ -8,18 +8,13 @@
 
 import SwiftUI
 
-struct BoxViewModel: Hashable, Codable, Identifiable{
-    var id = UUID()
-    var title, imageName: String
+struct BoxViewModel: Codable, Identifiable{
     
-    init(title: String, imageName: String) {
-        self.title = title
-        self.imageName = imageName
-    }
+    var id = UUID()
+    var box: Box
     
     init(box: Box) {
-        self.title = box.name
-        self.imageName = box.images[0]
+        self.box = box
     }
 }
 
@@ -34,58 +29,51 @@ struct CategoryRow: View {
     }
     
     /*var filterCategory: [BoxViewModel] {
-        let filteredBoxes = BoxData.boxes.filter { box in
-            return box.category == .banquet
-        }
-    }*/
+     let filteredBoxes = BoxData.boxes.filter { box in
+     return box.category == .banquet
+     }
+     }*/
     
+//
+//    var choixSegmentedLieux = [
+//        BoxViewModel(title: "food", imageName: "lakemcdonald"),
+//        BoxViewModel(title: "stade", imageName: "stmarylake"),
+//        BoxViewModel(title: "etc", imageName: "rainbowlake"),
+//        BoxViewModel(title: "New", imageName: "icybay"),
+//        BoxViewModel(title: "test", imageName: "silversalmoncreek"),
+//        BoxViewModel(title: "lieu", imageName: "hiddenlake")
+//    ]
+//
     
-    var choixSegmentedLieux = [
-        BoxViewModel(title: "food", imageName: "lakemcdonald"),
-        BoxViewModel(title: "stade", imageName: "stmarylake"),
-        BoxViewModel(title: "etc", imageName: "rainbowlake"),
-        BoxViewModel(title: "New", imageName: "icybay"),
-        BoxViewModel(title: "test", imageName: "silversalmoncreek"),
-        BoxViewModel(title: "lieu", imageName: "hiddenlake")
-    ]
-    
-   
     var body: some View {
         
-        VStack(alignment: .leading) {
-       //print("boxsData")
-            if choixSegmented == "Interets"{
-            Text("Sports").fontWeight(.medium).padding(10).font(.system(size: 25))
-            }else{
-            Text("Paris").fontWeight(.medium).padding(10).font(.system(size: 25))
-            }
+        List(Category.allCases, id: \.rawValue) { category  in
             
-            // BEGIN SLIDER HORIZONTAL
-            ScrollView(.horizontal, content: {
-                HStack(spacing: 10) {
-                    if choixSegmented == "Interets" {
-
-                        ForEach(choixSegmentedInteret, id: \.id) {
-                            box in BoxView(box: box)
-                        }
-                    }else{
-
-                        ForEach(choixSegmentedLieux, id: \.id) {
-                            box in BoxView(box: box)
-                        }
-                    }
-                }.padding(10)
+            
+            Section(header: Text(category.rawValue).fontWeight(.medium).padding(10).font(.system(size: 25))) {
                 
-            }).frame(height: 190)
-            // END SLIDER HORIZONTAL
-        }.padding(.top, -10)
+                // BEGIN SLIDER HORIZONTAL
+                ScrollView(.horizontal, content: {
+                    HStack(spacing: 10) {
+                        
+                        ForEach(BoxData.boxes.map { BoxViewModel(box: $0) }.filter { $0.box.category == category
+                        } , id: \.id) {
+                            boxViewModel in
+                            BoxView(boxViewModel: boxViewModel)
+                        }
+                    }.padding(10)
+                    
+                }).frame(height: 190)
+                // END SLIDER HORIZONTAL
+            }
+        }.padding()
     }
 }
 
 struct BoxView: View {
     
     @State private var isPresented = false
-    let box: BoxViewModel
+    let boxViewModel: BoxViewModel
     
     var body: some View {
         
@@ -93,13 +81,13 @@ struct BoxView: View {
             self.isPresented.toggle()
         }, label: {
             VStack(alignment: .leading){
-                Image(box.imageName).resizable()
+                Image(boxViewModel.box.images[0]).resizable()
                     .frame(width: 155, height: 155)
                     .cornerRadius(5)
-                Text(box.title)
+                Text(boxViewModel.box.name)
             }
         }).sheet(isPresented: $isPresented) { () -> Text in
-            Text("\(self.box.title)")
+            Text("\(self.boxViewModel.box.name)")
         }.buttonStyle(PlainButtonStyle())
         
         
