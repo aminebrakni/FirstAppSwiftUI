@@ -28,7 +28,7 @@ struct Box: Codable, Identifiable {
     }
 }
 
-enum City: String, Codable {
+enum City: String, Codable, CaseIterable {
     case londres = "Londres"
 }
 enum Category: String, Codable, Hashable, CaseIterable{

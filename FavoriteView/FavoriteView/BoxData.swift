@@ -36,5 +36,9 @@ struct BoxData {
     static func getBoxesByCategory(_ category: Category) -> [Box] {
         self.boxes.filter { $0.category == category }
     }
+    
+    static func getBoxesByCity(_ city: City) -> [Box]{
+        self.boxes.filter { $0.city == city }
+    }
 }
 
